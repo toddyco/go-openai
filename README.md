@@ -1,6 +1,6 @@
 # go-openai
 
-Wrapper around https://github.com/sashabaranov/go-openai
+Wrapper around https://github.com/toddyco/go-openai
 
 ## Basic Info
 
