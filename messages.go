@@ -48,14 +48,16 @@ type MessageText struct {
 }
 
 type Annotation struct {
-	Type         string `json:"type"`
-	Text         string `json:"text"`
-	StartIndex   int    `json:"start_index"`
-	EndIndex     int    `json:"end_index"`
-	FileCitation struct {
-		FileID string `json:"file_id"`
-		Quote  string `json:"quote"`
-	} `json:"file_citation"`
+	Type         string       `json:"type"`
+	Text         string       `json:"text"`
+	FileCitation FileCitation `json:"file_citation"`
+	StartIndex   int          `json:"start_index"`
+	EndIndex     int          `json:"end_index"`
+}
+
+type FileCitation struct {
+	FileID string `json:"file_id"`
+	Quote  string `json:"quote"`
 }
 
 type ImageFile struct {
