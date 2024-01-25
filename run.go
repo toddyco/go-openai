@@ -26,8 +26,15 @@ type Run struct {
 	Tools          []Tool             `json:"tools"`
 	FileIDS        []string           `json:"file_ids"`
 	Metadata       map[string]any     `json:"metadata"`
+	Usage          RunUsage           `json:"usage"`
 
 	httpHeader
+}
+
+type RunUsage struct {
+	PromptTokens     int `json:"prompt_tokens"`
+	CompletionTokens int `json:"completion_tokens"`
+	TotalTokens      int `json:"total_tokens"`
 }
 
 type RunStatus string
@@ -118,15 +125,8 @@ type RunStep struct {
 	FailedAt    *int64         `json:"failed_at,omitempty"`
 	CompletedAt *int64         `json:"completed_at,omitempty"`
 	Metadata    map[string]any `json:"metadata"`
-	Usage       RunUsage       `json:"usage"`
 
 	httpHeader
-}
-
-type RunUsage struct {
-	PromptTokens     int `json:"prompt_tokens"`
-	CompletionTokens int `json:"completion_tokens"`
-	TotalTokens      int `json:"total_tokens"`
 }
 
 type RunStepStatus string
